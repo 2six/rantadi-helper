@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>랜덤 타워 디펜스 리제로 도우미</title>
     <meta charset="utf-8"/>
     <style type="text/css">
       body {
@@ -19,7 +20,7 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        $("input").change(function() {
+        $("input").click(function() {
           //노말_드라군
           if($("#편식").is(":checked")) {
             if($("#인디").is(":checked")) {
@@ -610,7 +611,7 @@
     </script>
   </head>
   <body>
-    <b>게임 시작시 미션 노릴것들만 체크 해제해주세요.</b><br><br>
+    <b>게임 시작시 노릴 미션들만 체크 해제해주세요.</b><br><br>
     <form action="main.html">
     <table class="mission">
       <tr>
@@ -659,7 +660,6 @@
         <label for="천사" style="cursor:pointer"><input id="천사" type="checkbox" name="epic" value="천사" checked>천사</label></td>
       </tr>
     </table>
-    <input type="reset" value="초기화">
     </form>
     <br>
     <table class="tower">
