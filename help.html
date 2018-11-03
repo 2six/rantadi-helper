@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>랜덤 타워 디펜스 리제로 도우미</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+      body {
+        color: #ffffff;
+        background-color: #000000;
+        font-size: 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .tower {
+        border-spacing: 4px 0px;
+        border-collapse: separate;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("input").click(function() {
+          //노말_드라군
+          if($("#반전").is(":checked")==false) {
+            if($("#편식").is(":checked")) {
+              if($("#인디").is(":checked")) {
+                if($("#천사").is(":checked")) {
+                  $(".노말_드라군").css("display","none");
+                } else {
+                  $(".노말_드라군").css("display","");
+                }
+              } else {
+                $(".노말_드라군").css("display","");
+              }
+            } else {
+              $(".노말_드라군").css("display","");
+            }
+          }
+          else {
+            if($("#편식").is(":checked")) {
+              if($("#인디").is(":checked")) {
+                if($("#천사").is(":checked")) {
+                  $(".노말_드라군").css("display","");
+                } else {
+                  $(".노말_드라군").css("display","none");
+                }
+              } else {
+                $(".노말_드라군").css("display","none");
+              }
+            } else {
+              $(".노말_드라군").css("display","none");
+            }
+          }
+
+          //노말_벌쳐
+          if($("#반전").is(":checked")==false) {
+            if($("#편식").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#인디").is(":checked")) {
+                  $(".노말_벌쳐").css("display","none");
+                } else {
+                  $(".노말_벌쳐").css("display","");
+                }
+              } else {
+                $(".노말_벌쳐").css("display","");
+              }
+            } else {
+              $(".노말_벌쳐").css("display","");
+            }
+          }
+          else {
+            if($("#편식").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#인디").is(":checked")) {
+                  $(".노말_벌쳐").css("display","");
+                } else {
+                  $(".노말_벌쳐").css("display","none");
+                }
+              } else {
+                $(".노말_벌쳐").css("display","none");
+              }
+            } else {
+              $(".노말_벌쳐").css("display","none");
+            }
+          }
+
+          //노말_뮤탈
+          if($("#반전").is(":checked")==false) {
+            if($("#편식").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#주작").is(":checked")) {
+                  $(".노말_뮤탈").css("display","none");
+                } else {
+                  $(".노말_뮤탈").css("display","");
+                }
+              } else {
+                $(".노말_뮤탈").css("display","");
+              }
+            } else {
+              $(".노말_뮤탈").css("display","");
+            }
+          }
+          else {
+            if($("#편식").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#주작").is(":checked")) {
+                  $(".노말_뮤탈").css("display","");
+                } else {
+                  $(".노말_뮤탈").css("display","none");
+                }
+              } else {
+                $(".노말_뮤탈").css("display","none");
+              }
+            } else {
+              $(".노말_뮤탈").css("display","none");
+            }
+          }
+
+          //노말_레이스
+          if($("#반전").is(":checked")==false) {
+            if($("#편식").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#다스").is(":checked")) {
+                  $(".노말_레이스").css("display","none");
+                } else {
+                  $(".노말_레이스").css("display","");
+                }
+              } else {
+                $(".노말_레이스").css("display","");
+              }
+            } else {
+              $(".노말_레이스").css("display","");
+            }
+          }
+          else {
+            if($("#편식").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#다스").is(":checked")) {
+                  $(".노말_레이스").css("display","");
+                } else {
+                  $(".노말_레이스").css("display","none");
+                }
+              } else {
+                $(".노말_레이스").css("display","none");
+              }
+            } else {
+              $(".노말_레이스").css("display","none");
+            }
+          }
+
+          //노말_스카웃
+          if($("#반전").is(":checked")==false) {
+            if($("#편식").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#천사").is(":checked")) {
+                  $(".노말_스카웃").css("display","none");
+                } else {
+                  $(".노말_스카웃").css("display","");
+                }
+              } else {
+                $(".노말_스카웃").css("display","");
+              }
+            } else {
+              $(".노말_스카웃").css("display","");
+            }
+          }
+          else {
+            if($("#편식").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#천사").is(":checked")) {
+                  $(".노말_스카웃").css("display","");
+                } else {
+                  $(".노말_스카웃").css("display","none");
+                }
+              } else {
+                $(".노말_스카웃").css("display","none");
+              }
+            } else {
+              $(".노말_스카웃").css("display","none");
+            }
+          }
+
+          //노말_울트라
+          if($("#반전").is(":checked")==false) {
+            if($("#편식").is(":checked")) {
+              if($("#메갈로돈").is(":checked")) {
+                $(".노말_울트라").css("display","none");
+              } else {
+                $(".노말_울트라").css("display","");
+              }
+            } else {
+              $(".노말_울트라").css("display","");
+            }
+          }
+          else {
+            if($("#편식").is(":checked")) {
+              if($("#메갈로돈").is(":checked")) {
+                $(".노말_울트라").css("display","");
+              } else {
+                $(".노말_울트라").css("display","none");
+              }
+            } else {
+              $(".노말_울트라").css("display","none");
+            }
+          }
+
+          //노말_마린,히드라
+          if($("#반전").is(":checked")==false) {
+            if($("#편식").is(":checked")) {
+              $(".노말_마린").css("display","none");
+              $(".노말_히드라").css("display","none");
+            } else {
+              $(".노말_마린").css("display","");
+              $(".노말_히드라").css("display","");
+            }
+          }
+          else {
+            if($("#편식").is(":checked")) {
+              $(".노말_마린").css("display","");
+              $(".노말_히드라").css("display","");
+            } else {
+              $(".노말_마린").css("display","none");
+              $(".노말_히드라").css("display","none");
+            }
+          }
+
+          //매직_닼칸
+          if($("#반전").is(":checked")==false) {
+            if($("#그레이").is(":checked")) {
+              if($("#천사").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#매직자리").is(":checked")) {
+                    $(".매직_닼칸").css("display","none");
+                  }
+                  else {
+                    if($("#갈색").is(":checked")==false) {
+                      $(".매직_닼칸").css("display","none");
+                    }
+                    else {
+                      $(".매직_닼칸").css("display","");
+                    }
+                  }
+                }
+                else {
+                  $(".매직_닼칸").css("display","");
+                }
+              }
+              else {
+                $(".매직_닼칸").css("display","");
+              }
+            }
+            else {
+              $(".매직_닼칸").css("display","");
+            }
+          }
+          else {
+            if($("#그레이").is(":checked")) {
+              if($("#천사").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#매직자리").is(":checked")) {
+                    $(".매직_닼칸").css("display","");
+                  }
+                  else {
+                    if($("#갈색").is(":checked")==false) {
+                      $(".매직_닼칸").css("display","");
+                    }
+                    else {
+                      $(".매직_닼칸").css("display","none");
+                    }
+                  }
+                }
+                else {
+                  $(".매직_닼칸").css("display","none");
+                }
+              }
+              else {
+                $(".매직_닼칸").css("display","none");
+              }
+            }
+            else {
+              $(".매직_닼칸").css("display","none");
+            }
+          }
+
+          //매직_탱크
+          if($("#반전").is(":checked")==false) {
+            if($("#천사").is(":checked")) {
+              if($("#다스").is(":checked")) {
+                if($("#그레이").is(":checked")) {
+                  if($("#스타쉽").is(":checked")) {
+                    if($("#인디").is(":checked")) {
+                      if($("#매직자리").is(":checked")) {
+                        $(".매직_탱크").css("display","none");
+                      }
+                      else {
+                        if($("#주황").is(":checked")==false) {
+                          $(".매직_탱크").css("display","none");
+                        }
+                        else {
+                          $(".매직_탱크").css("display","");
+                        }
+                      }
+                    }
+                    else {
+                      $(".매직_탱크").css("display","");
+                    }
+                  }
+                  else {
+                    $(".매직_탱크").css("display","");
+                  }
+                }
+                else {
+                  $(".매직_탱크").css("display","");
+                }
+              }
+              else {
+                $(".매직_탱크").css("display","");
+              }
+            }
+            else {
+              $(".매직_탱크").css("display","");
+            }
+          }
+          else {
+            if($("#천사").is(":checked")) {
+              if($("#다스").is(":checked")) {
+                if($("#그레이").is(":checked")) {
+                  if($("#스타쉽").is(":checked")) {
+                    if($("#인디").is(":checked")) {
+                      if($("#매직자리").is(":checked")) {
+                        $(".매직_탱크").css("display","");
+                      }
+                      else {
+                        if($("#주황").is(":checked")==false) {
+                          $(".매직_탱크").css("display","");
+                        }
+                        else {
+                          $(".매직_탱크").css("display","none");
+                        }
+                      }
+                    }
+                    else {
+                      $(".매직_탱크").css("display","none");
+                    }
+                  }
+                  else {
+                    $(".매직_탱크").css("display","none");
+                  }
+                }
+                else {
+                  $(".매직_탱크").css("display","none");
+                }
+              }
+              else {
+                $(".매직_탱크").css("display","none");
+              }
+            }
+            else {
+              $(".매직_탱크").css("display","none");
+            }
+          }
+
+          //매직_디파
+          if($("#반전").is(":checked")==false) {
+            if($("#그레이").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#매직자리").is(":checked")) {
+                    $(".매직_디파").css("display","none");
+                  }
+                  else {
+                    if($("#빨강").is(":checked")==false) {
+                      $(".매직_디파").css("display","none");
+                    }
+                    else {
+                      $(".매직_디파").css("display","");
+                    }
+                  }
+                }
+                else {
+                  $(".매직_디파").css("display","");
+                }
+              }
+              else {
+                $(".매직_디파").css("display","");
+              }
+            }
+            else {
+              $(".매직_디파").css("display","");
+            }
+          }
+          else {
+            if($("#그레이").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#매직자리").is(":checked")) {
+                    $(".매직_디파").css("display","");
+                  }
+                  else {
+                    if($("#빨강").is(":checked")==false) {
+                      $(".매직_디파").css("display","");
+                    }
+                    else {
+                      $(".매직_디파").css("display","none");
+                    }
+                  }
+                }
+                else {
+                  $(".매직_디파").css("display","none");
+                }
+              }
+              else {
+                $(".매직_디파").css("display","none");
+              }
+            }
+            else {
+              $(".매직_디파").css("display","none");
+            }
+          }
+
+          //매직_스카웃
+          if($("#반전").is(":checked")==false) {
+            if($("#그레이").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#천사").is(":checked")) {
+                    $(".매직_스카웃").css("display","none");
+                  } else {
+                    $(".매직_스카웃").css("display","");
+                  }
+                } else {
+                  $(".매직_스카웃").css("display","");
+                }
+              } else {
+                $(".매직_스카웃").css("display","");
+              }
+            } else {
+              $(".매직_스카웃").css("display","");
+            }
+          }
+          else {
+            if($("#그레이").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#천사").is(":checked")) {
+                    $(".매직_스카웃").css("display","");
+                  } else {
+                    $(".매직_스카웃").css("display","none");
+                  }
+                } else {
+                  $(".매직_스카웃").css("display","none");
+                }
+              } else {
+                $(".매직_스카웃").css("display","none");
+              }
+            } else {
+              $(".매직_스카웃").css("display","none");
+            }
+          }
+
+          //매직_닼템
+          if($("#반전").is(":checked")==false) {
+            if($("#503").is(":checked")) {
+              if($("#그레이").is(":checked")) {
+                if($("#매직자리").is(":checked")) {
+                  $(".매직_닼템").css("display","none");
+                }
+                else {
+                  if($("#파랑").is(":checked")==false) {
+                    $(".매직_닼템").css("display","none");
+                  }
+                  else {
+                    $(".매직_닼템").css("display","");
+                  }
+                }
+              }
+              else {
+                $(".매직_닼템").css("display","");
+              }
+            }
+            else {
+              $(".매직_닼템").css("display","");
+            }
+          }
+          else {
+            if($("#503").is(":checked")) {
+              if($("#그레이").is(":checked")) {
+                if($("#매직자리").is(":checked")) {
+                  $(".매직_닼템").css("display","");
+                }
+                else {
+                  if($("#파랑").is(":checked")==false) {
+                    $(".매직_닼템").css("display","");
+                  }
+                  else {
+                    $(".매직_닼템").css("display","none");
+                  }
+                }
+              }
+              else {
+                $(".매직_닼템").css("display","none");
+              }
+            }
+            else {
+              $(".매직_닼템").css("display","none");
+            }
+          }
+
+          //매직_여고
+          if($("#반전").is(":checked")==false) {
+            if($("#그남그여").is(":checked")) {
+              if($("#그레이").is(":checked")) {
+                if($("#매직자리").is(":checked")) {
+                  $(".매직_여고").css("display","none");
+                }
+                else {
+                  if($("#청록").is(":checked")==false) {
+                    $(".매직_여고").css("display","none");
+                  }
+                  else {
+                    $(".매직_여고").css("display","");
+                  }
+                }
+              }
+              else {
+                $(".매직_여고").css("display","");
+              }
+            }
+            else {
+              $(".매직_여고").css("display","");
+            }
+          }
+          else {
+            if($("#그남그여").is(":checked")) {
+              if($("#그레이").is(":checked")) {
+                if($("#매직자리").is(":checked")) {
+                  $(".매직_여고").css("display","");
+                }
+                else {
+                  if($("#청록").is(":checked")==false) {
+                    $(".매직_여고").css("display","");
+                  }
+                  else {
+                    $(".매직_여고").css("display","none");
+                  }
+                }
+              }
+              else {
+                $(".매직_여고").css("display","none");
+              }
+            }
+            else {
+              $(".매직_여고").css("display","none");
+            }
+          }
+
+          //매직_파벳
+          if($("#반전").is(":checked")==false) {
+            if($("#그레이").is(":checked")) {
+              if($("#매직자리").is(":checked")) {
+                $(".매직_파벳").css("display","none");
+              }
+              else {
+                if($("#보라").is(":checked")==false) {
+                  $(".매직_파벳").css("display","none");
+                }
+                else {
+                  $(".매직_파벳").css("display","");
+                }
+              }
+            }
+            else {
+              $(".매직_파벳").css("display","");
+            }
+          }
+          else {
+            if($("#그레이").is(":checked")) {
+              if($("#매직자리").is(":checked")) {
+                $(".매직_파벳").css("display","");
+              }
+              else {
+                if($("#보라").is(":checked")==false) {
+                  $(".매직_파벳").css("display","");
+                }
+                else {
+                  $(".매직_파벳").css("display","none");
+                }
+              }
+            }
+            else {
+              $(".매직_파벳").css("display","none");
+            }
+          }
+
+          //매직_고스트
+          if($("#반전").is(":checked")==false) {
+            if($("#그남그여").is(":checked")) {
+              if($("#그레이").is(":checked")) {
+                if($("#미치광이").is(":checked")) {
+                  $(".매직_고스트").css("display","none");
+                } else {
+                  $(".매직_고스트").css("display","");
+                }
+              } else {
+                $(".매직_고스트").css("display","");
+              }
+            } else {
+              $(".매직_고스트").css("display","");
+            }
+          }
+          else {
+            if($("#그남그여").is(":checked")) {
+              if($("#그레이").is(":checked")) {
+                if($("#미치광이").is(":checked")) {
+                  $(".매직_고스트").css("display","");
+                } else {
+                  $(".매직_고스트").css("display","none");
+                }
+              } else {
+                $(".매직_고스트").css("display","none");
+              }
+            } else {
+              $(".매직_고스트").css("display","none");
+            }
+          }
+
+          //레어_드라군
+          if($("#반전").is(":checked")==false) {
+            if($("#언럭키").is(":checked")) {
+              if($("#인디").is(":checked")) {
+                if($("#천사").is(":checked")) {
+                  $(".레어_드라군").css("display","none");
+                } else {
+                  $(".레어_드라군").css("display","");
+                }
+              } else {
+                $(".레어_드라군").css("display","");
+              }
+            } else {
+              $(".레어_드라군").css("display","");
+            }
+          }
+          else {
+            if($("#언럭키").is(":checked")) {
+              if($("#인디").is(":checked")) {
+                if($("#천사").is(":checked")) {
+                  $(".레어_드라군").css("display","");
+                } else {
+                  $(".레어_드라군").css("display","none");
+                }
+              } else {
+                $(".레어_드라군").css("display","none");
+              }
+            } else {
+              $(".레어_드라군").css("display","none");
+            }
+          }
+
+          //레어_파벳
+          if($("#반전").is(":checked")==false) {
+            if($("#언럭키").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#인디").is(":checked")) {
+                  if($("#레어자리").is(":checked")) {
+                    $(".레어_파벳").css("display","none");
+                  }
+                  else {
+                    if($("#빨강").is(":checked")==false) {
+                      $(".레어_파벳").css("display","none");
+                    }
+                    else {
+                      $(".레어_파벳").css("display","");
+                    }
+                  }
+                }
+                else {
+                  $(".레어_파벳").css("display","");
+                }
+              }
+              else {
+                $(".레어_파벳").css("display","");
+              }
+            }
+            else {
+              $(".레어_파벳").css("display","");
+            }
+          }
+          else {
+            if($("#언럭키").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#인디").is(":checked")) {
+                  if($("#레어자리").is(":checked")) {
+                    $(".레어_파벳").css("display","");
+                  }
+                  else {
+                    if($("#빨강").is(":checked")==false) {
+                      $(".레어_파벳").css("display","");
+                    }
+                    else {
+                      $(".레어_파벳").css("display","none");
+                    }
+                  }
+                }
+                else {
+                  $(".레어_파벳").css("display","none");
+                }
+              }
+              else {
+                $(".레어_파벳").css("display","none");
+              }
+            }
+            else {
+              $(".레어_파벳").css("display","none");
+            }
+          }
+
+          //레어_디바
+          if($("#반전").is(":checked")==false) {
+            if($("#언럭키").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#주작").is(":checked")) {
+                  if($("#503").is(":checked")) {
+                    if($("#천사").is(":checked")) {
+                      if($("#레어자리").is(":checked")) {
+                        $(".레어_디바").css("display","none");
+                      }
+                      else {
+                        if($("#주황").is(":checked")==false) {
+                          $(".레어_디바").css("display","none");
+                        }
+                        else {
+                          $(".레어_디바").css("display","");
+                        }
+                      }
+                    }
+                    else {
+                      $(".레어_디바").css("display","");
+                    }
+                  }
+                  else {
+                    $(".레어_디바").css("display","");
+                  }
+                }
+                else {
+                  $(".레어_디바").css("display","");
+                }
+              }
+              else {
+                $(".레어_디바").css("display","");
+              }
+            }
+            else {
+              $(".레어_디바").css("display","");
+            }
+          }
+          else {
+            if($("#언럭키").is(":checked")) {
+              if($("#스타쉽").is(":checked")) {
+                if($("#주작").is(":checked")) {
+                  if($("#503").is(":checked")) {
+                    if($("#천사").is(":checked")) {
+                      if($("#레어자리").is(":checked")) {
+                        $(".레어_디바").css("display","none");
+                      }
+                      else {
+                        if($("#주황").is(":checked")==false) {
+                          $(".레어_디바").css("display","none");
+                        }
+                        else {
+                          $(".레어_디바").css("display","none");
+                        }
+                      }
+                    }
+                    else {
+                      $(".레어_디바").css("display","none");
+                    }
+                  }
+                  else {
+                    $(".레어_디바").css("display","none");
+                  }
+                }
+                else {
+                  $(".레어_디바").css("display","none");
+                }
+              }
+              else {
+                $(".레어_디바").css("display","none");
+              }
+            }
+            else {
+              $(".레어_디바").css("display","none");
+            }
+          }
+
+          //레어_아비터
+          if($("#반전").is(":checked")==false) {
+            if($("#주작").is(":checked")) {
+              if($("#언럭키").is(":checked")) {
+                if($("#레어자리").is(":checked")) {
+                  $(".레어_아비터").css("display","none");
+                }
+                else {
+                  if($("#갈색").is(":checked")==false) {
+                    $(".레어_아비터").css("display","none");
+                  }
+                  else {
+                    $(".매직_디파").css("display","");
+                  }
+                }
+              }
+              else {
+                $(".레어_아비터").css("display","");
+              }
+            }
+            else {
+              $(".레어_아비터").css("display","");
+            }
+          }
+          else {
+            if($("#주작").is(":checked")) {
+              if($("#언럭키").is(":checked")) {
+                if($("#레어자리").is(":checked")) {
+                  $(".레어_아비터").css("display","");
+                }
+                else {
+                  if($("#갈색").is(":checked")==false) {
+                    $(".레어_아비터").css("display","");
+                  }
+                  else {
+                    $(".매직_디파").css("display","none");
+                  }
+                }
+              }
+              else {
+                $(".레어_아비터").css("display","none");
+              }
+            }
+            else {
+              $(".레어_아비터").css("display","none");
+            }
+          }
+
+          //레어_고스트
+          if($("#반전").is(":checked")==false) {
+            if($("#천사").is(":checked")) {
+              if($("#언럭키").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#333").is(":checked")) {
+                    if($("#레어자리").is(":checked")) {
+                      $(".레어_고스트").css("display","none");
+                    }
+                    else {
+                      if($("#파랑").is(":checked")==false) {
+                        $(".레어_고스트").css("display","none");
+                      }
+                      else {
+                        $(".레어_고스트").css("display","");
+                      }
+                    }
+                  }
+                  else {
+                    $(".레어_고스트").css("display","");
+                  }
+                }
+                else {
+                  $(".레어_고스트").css("display","");
+                }
+              }
+              else {
+                $(".레어_고스트").css("display","");
+              }
+            }
+            else {
+              $(".레어_고스트").css("display","");
+            }
+          }
+          else {
+            if($("#천사").is(":checked")) {
+              if($("#언럭키").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#333").is(":checked")) {
+                    if($("#레어자리").is(":checked")) {
+                      $(".레어_고스트").css("display","");
+                    }
+                    else {
+                      if($("#파랑").is(":checked")==false) {
+                        $(".레어_고스트").css("display","");
+                      }
+                      else {
+                        $(".레어_고스트").css("display","none");
+                      }
+                    }
+                  }
+                  else {
+                    $(".레어_고스트").css("display","none");
+                  }
+                }
+                else {
+                  $(".레어_고스트").css("display","none");
+                }
+              }
+              else {
+                $(".레어_고스트").css("display","none");
+              }
+            }
+            else {
+              $(".레어_고스트").css("display","none");
+            }
+          }
+
+          //레어_레이스
+          if($("#반전").is(":checked")==false) {
+            if($("#언럭키").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#333").is(":checked")) {
+                  if($("#다스").is(":checked")) {
+                    if($("#레어자리").is(":checked")) {
+                      $(".레어_레이스").css("display","none");
+                    }
+                    else {
+                      if($("#보라").is(":checked")==false) {
+                        $(".레어_레이스").css("display","none");
+                      }
+                      else {
+                        $(".레어_레이스").css("display","");
+                      }
+                    }
+                  }
+                  else {
+                    $(".레어_레이스").css("display","");
+                  }
+                }
+                else {
+                  $(".레어_레이스").css("display","");
+                }
+              }
+              else {
+                $(".레어_레이스").css("display","");
+              }
+            }
+            else {
+              $(".레어_레이스").css("display","");
+            }
+          }
+          else {
+            if($("#언럭키").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#333").is(":checked")) {
+                  if($("#다스").is(":checked")) {
+                    if($("#레어자리").is(":checked")) {
+                      $(".레어_레이스").css("display","");
+                    }
+                    else {
+                      if($("#보라").is(":checked")==false) {
+                        $(".레어_레이스").css("display","");
+                      }
+                      else {
+                        $(".레어_레이스").css("display","none");
+                      }
+                    }
+                  }
+                  else {
+                    $(".레어_레이스").css("display","none");
+                  }
+                }
+                else {
+                  $(".레어_레이스").css("display","none");
+                }
+              }
+              else {
+                $(".레어_레이스").css("display","none");
+              }
+            }
+            else {
+              $(".레어_레이스").css("display","none");
+            }
+          }
+
+          //레어_골리앗
+          if($("#반전").is(":checked")==false) {
+            if($("#언럭키").is(":checked")) {
+              if($("#다스").is(":checked")) {
+                if($("#333").is(":checked")) {
+                  if($("#레어자리").is(":checked")) {
+                    $(".레어_골리앗").css("display","none");
+                  }
+                  else {
+                    if($("#청록").is(":checked")==false) {
+                      $(".레어_골리앗").css("display","none");
+                    }
+                    else {
+                      $(".레어_골리앗").css("display","");
+                    }
+                  }
+                }
+                else {
+                  $(".레어_골리앗").css("display","");
+                }
+              }
+              else {
+                $(".레어_골리앗").css("display","");
+              }
+            }
+            else {
+              $(".레어_골리앗").css("display","");
+            }
+          }
+          else {
+            if($("#언럭키").is(":checked")) {
+              if($("#다스").is(":checked")) {
+                if($("#333").is(":checked")) {
+                  if($("#레어자리").is(":checked")) {
+                    $(".레어_골리앗").css("display","");
+                  }
+                  else {
+                    if($("#청록").is(":checked")==false) {
+                      $(".레어_골리앗").css("display","");
+                    }
+                    else {
+                      $(".레어_골리앗").css("display","none");
+                    }
+                  }
+                }
+                else {
+                  $(".레어_골리앗").css("display","none");
+                }
+              }
+              else {
+                $(".레어_골리앗").css("display","none");
+              }
+            }
+            else {
+              $(".레어_골리앗").css("display","none");
+            }
+          }
+
+          //레어_디파
+          if($("#반전").is(":checked")==false) {
+            if($("#언럭키").is(":checked")) {
+              $(".레어_디파").css("display","none");
+            } else {
+              $(".레어_디파").css("display","");
+            }
+          }
+          else {
+            if($("#언럭키").is(":checked")) {
+              $(".레어_디파").css("display","");
+            } else {
+              $(".레어_디파").css("display","none");
+            }
+          }
+
+          //유니크_리버
+          if($("#반전").is(":checked")==false) {
+            if($("#인디").is(":checked")) {
+              if($("#333").is(":checked")) {
+                if($("#악운").is(":checked")) {
+                  if($("#5복족").is(":checked")) {
+                    if($("#천사").is(":checked")) {
+                      $(".유니크_리버").css("display","none");
+                    } else {
+                      $(".유니크_리버").css("display","");
+                    }
+                  } else {
+                    $(".유니크_리버").css("display","");
+                  }
+                } else {
+                  $(".유니크_리버").css("display","");
+                }
+              } else {
+                $(".유니크_리버").css("display","");
+              }
+            } else {
+              $(".유니크_리버").css("display","");
+            }
+          }
+          else {
+            if($("#인디").is(":checked")) {
+              if($("#333").is(":checked")) {
+                if($("#악운").is(":checked")) {
+                  if($("#5복족").is(":checked")) {
+                    if($("#천사").is(":checked")) {
+                      $(".유니크_리버").css("display","");
+                    } else {
+                      $(".유니크_리버").css("display","none");
+                    }
+                  } else {
+                    $(".유니크_리버").css("display","none");
+                  }
+                } else {
+                  $(".유니크_리버").css("display","none");
+                }
+              } else {
+                $(".유니크_리버").css("display","none");
+              }
+            } else {
+              $(".유니크_리버").css("display","none");
+            }
+          }
+
+          //유니크_발키리
+          if($("#반전").is(":checked")==false) {
+            if($("#스타쉽").is(":checked")) {
+              if($("#인디").is(":checked")) {
+                if($("#주작").is(":checked")) {
+                  if($("#악운").is(":checked")) {
+                    if($("#이취").is(":checked")) {
+                      $(".유니크_발키리").css("display","none");
+                    } else {
+                      $(".유니크_발키리").css("display","");
+                    }
+                  } else {
+                    $(".유니크_발키리").css("display","");
+                  }
+                } else {
+                  $(".유니크_발키리").css("display","");
+                }
+              } else {
+                $(".유니크_발키리").css("display","");
+              }
+            } else {
+              $(".유니크_발키리").css("display","");
+            }
+          }
+          else {
+            if($("#스타쉽").is(":checked")) {
+              if($("#인디").is(":checked")) {
+                if($("#주작").is(":checked")) {
+                  if($("#악운").is(":checked")) {
+                    if($("#이취").is(":checked")) {
+                      $(".유니크_발키리").css("display","");
+                    } else {
+                      $(".유니크_발키리").css("display","none");
+                    }
+                  } else {
+                    $(".유니크_발키리").css("display","none");
+                  }
+                } else {
+                  $(".유니크_발키리").css("display","none");
+                }
+              } else {
+                $(".유니크_발키리").css("display","none");
+              }
+            } else {
+              $(".유니크_발키리").css("display","none");
+            }
+          }
+
+          //유니크_가디언
+          if($("#반전").is(":checked")==false) {
+            if($("#스타쉽").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#악운").is(":checked")) {
+                    if($("#이취").is(":checked")) {
+                      $(".유니크_가디언").css("display","none");
+                    } else {
+                      $(".유니크_가디언").css("display","");
+                    }
+                  } else {
+                    $(".유니크_가디언").css("display","");
+                  }
+                } else {
+                  $(".유니크_가디언").css("display","");
+                }
+              } else {
+                $(".유니크_가디언").css("display","");
+              }
+            } else {
+              $(".유니크_가디언").css("display","");
+            }
+          }
+          else {
+            if($("#스타쉽").is(":checked")) {
+              if($("#주작").is(":checked")) {
+                if($("#503").is(":checked")) {
+                  if($("#악운").is(":checked")) {
+                    if($("#이취").is(":checked")) {
+                      $(".유니크_가디언").css("display","none");
+                    } else {
+                      $(".유니크_가디언").css("display","none");
+                    }
+                  } else {
+                    $(".유니크_가디언").css("display","none");
+                  }
+                } else {
+                  $(".유니크_가디언").css("display","none");
+                }
+              } else {
+                $(".유니크_가디언").css("display","none");
+              }
+            } else {
+              $(".유니크_가디언").css("display","none");
+            }
+          }
+
+          //유니크_닼칸
+          if($("#반전").is(":checked")==false) {
+            if($("#503").is(":checked")) {
+              if($("#다스").is(":checked")) {
+                if($("#악운").is(":checked")) {
+                  if($("#이취").is(":checked")) {
+                    if($("#다스").is(":checked")) {
+                      if($("#천사").is(":checked")) {
+                        $(".유니크_닼칸").css("display","none");
+                      } else {
+                        $(".유니크_닼칸").css("display","");
+                      }
+                    } else {
+                      $(".유니크_닼칸").css("display","");
+                    }
+                  } else {
+                    $(".유니크_닼칸").css("display","");
+                  }
+                } else {
+                  $(".유니크_닼칸").css("display","");
+                }
+              } else {
+                $(".유니크_닼칸").css("display","");
+              }
+            } else {
+              $(".유니크_닼칸").css("display","");
+            }
+          }
+          else {
+            if($("#503").is(":checked")) {
+              if($("#다스").is(":checked")) {
+                if($("#악운").is(":checked")) {
+                  if($("#이취").is(":checked")) {
+                    if($("#다스").is(":checked")) {
+                      if($("#천사").is(":checked")) {
+                        $(".유니크_닼칸").css("display","");
+                      } else {
+                        $(".유니크_닼칸").css("display","none");
+                      }
+                    } else {
+                      $(".유니크_닼칸").css("display","none");
+                    }
+                  } else {
+                    $(".유니크_닼칸").css("display","none");
+                  }
+                } else {
+                  $(".유니크_닼칸").css("display","none");
+                }
+              } else {
+                $(".유니크_닼칸").css("display","none");
+              }
+            } else {
+              $(".유니크_닼칸").css("display","none");
+            }
+          }
+
+          //유니크_하템
+          if($("#반전").is(":checked")==false) {
+            if($("#503").is(":checked")) {
+              if($("#악운").is(":checked")) {
+                if($("#이취").is(":checked")) {
+                  if($("#천사").is(":checked")) {
+                    $(".유니크_하템").css("display","none");
+                  } else {
+                    $(".유니크_하템").css("display","");
+                  }
+                } else {
+                  $(".유니크_하템").css("display","");
+                }
+              } else {
+                $(".유니크_하템").css("display","");
+              }
+            } else {
+              $(".유니크_하템").css("display","");
+            }
+          }
+          else {
+            if($("#503").is(":checked")) {
+              if($("#악운").is(":checked")) {
+                if($("#이취").is(":checked")) {
+                  if($("#천사").is(":checked")) {
+                    $(".유니크_하템").css("display","");
+                  } else {
+                    $(".유니크_하템").css("display","none");
+                  }
+                } else {
+                  $(".유니크_하템").css("display","none");
+                }
+              } else {
+                $(".유니크_하템").css("display","none");
+              }
+            } else {
+              $(".유니크_하템").css("display","none");
+            }
+          }
+
+          //유니크_히드라
+          if($("#반전").is(":checked")==false) {
+            if($("#악운").is(":checked")) {
+              if($("#이취").is(":checked")) {
+                if($("#쩜드라").is(":checked")) {
+                  $(".유니크_히드라").css("display","none");
+                } else {
+                  $(".유니크_히드라").css("display","");
+                }
+              } else {
+                $(".유니크_히드라").css("display","");
+              }
+            } else {
+              $(".유니크_히드라").css("display","");
+            }
+          }
+          else {
+            if($("#악운").is(":checked")) {
+              if($("#이취").is(":checked")) {
+                if($("#쩜드라").is(":checked")) {
+                  $(".유니크_히드라").css("display","");
+                } else {
+                  $(".유니크_히드라").css("display","none");
+                }
+              } else {
+                $(".유니크_히드라").css("display","none");
+              }
+            } else {
+              $(".유니크_히드라").css("display","none");
+            }
+          }
+
+          //유니크_저글링
+          if($("#반전").is(":checked")==false) {
+            if($("#악운").is(":checked")) {
+              if($("#이취").is(":checked")) {
+                if($("#다스").is(":checked")) {
+                  $(".유니크_저글링").css("display","none");
+                } else {
+                  $(".유니크_저글링").css("display","");
+                }
+              } else {
+                $(".유니크_저글링").css("display","");
+              }
+            } else {
+              $(".유니크_저글링").css("display","");
+            }
+          }
+          else {
+            if($("#악운").is(":checked")) {
+              if($("#이취").is(":checked")) {
+                if($("#다스").is(":checked")) {
+                  $(".유니크_저글링").css("display","");
+                } else {
+                  $(".유니크_저글링").css("display","none");
+                }
+              } else {
+                $(".유니크_저글링").css("display","none");
+              }
+            } else {
+              $(".유니크_저글링").css("display","none");
+            }
+          }
+
+          //유니크_마린
+          if($("#반전").is(":checked")==false) {
+            if($("#악운").is(":checked")) {
+              if($("#이취").is(":checked")) {
+                $(".유니크_마린").css("display","none");
+              } else {
+                $(".유니크_마린").css("display","");
+              }
+            } else {
+              $(".유니크_마린").css("display","");
+            }
+          }
+          else {
+            if($("#악운").is(":checked")) {
+              if($("#이취").is(":checked")) {
+                $(".유니크_마린").css("display","");
+              } else {
+                $(".유니크_마린").css("display","none");
+              }
+            } else {
+              $(".유니크_마린").css("display","none");
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <b>게임 시작시 노릴 미션들만 체크 해제해주세요.</b><br><br>
+    <form action="main.html">
+    <table class="mission">
+      <tr>
+        <td>플레이어 색깔</td>
+        <td style="font-weight:bold">
+          <label for="빨강" style="cursor:pointer"><input id="빨강" type="radio" name="color" value="빨강" checked><span style="color:red">빨강
+          <label for="파랑" style="cursor:pointer"><input id="파랑" type="radio" name="color" value="파랑"><span style="color:blue">파랑
+          <label for="청록" style="cursor:pointer"><input id="청록" type="radio" name="color" value="청록"><span style="color:teal">청록
+          <label for="보라" style="cursor:pointer"><input id="보라" type="radio" name="color" value="보라"><span style="color:purple">보라
+          <label for="주황" style="cursor:pointer"><input id="주황" type="radio" name="color" value="주황"><span style="color:orange">주황
+          <label for="갈색" style="cursor:pointer"><input id="갈색" type="radio" name="color" value="갈색"><span style="color:brown">갈색
+        </td>
+      </tr>
+        <td>노말타워 미션</td>
+        <td><label for="편식" style="cursor:pointer"><input id="편식" type="checkbox" name="normal" value="편식">편식</label>
+        <label for="메갈로돈" style="cursor:pointer"><input id="메갈로돈" type="checkbox" name="normal" value="메갈로돈">메갈로돈</label></td>
+      </tr>
+      <tr>
+        <td>매직타워 미션</td>
+        <td><label for="그남그여" style="cursor:pointer"><input id="그남그여" type="checkbox" name="magic" value="그남그여">그남그여</label>
+        <label for="그레이" style="cursor:pointer"><input id="그레이" type="checkbox" name="magic" value="그레이">그레이</label>
+        <label for="매직자리" style="cursor:pointer"><input id="매직자리" type="checkbox" name="magic" value="매직자리">매직자리</label></td>
+      </tr>
+      <tr>
+        <td>레어타워 미션</td>
+        <td><label for="언럭키" style="cursor:pointer"><input id="언럭키" type="checkbox" name="rare" value="언럭키">언럭키</label>
+        <label for="레어자리" style="cursor:pointer"><input id="레어자리" type="checkbox" name="rare" value="자리">레어자리</label></td>
+      </tr>
+      <tr>
+        <td>유닠타워 미션</td>
+        <td><label for="스타쉽" style="cursor:pointer"><input id="스타쉽" type="checkbox" name="unique" value="스타쉽">스타쉽</label>
+        <label for="인디" style="cursor:pointer"><input id="인디" type="checkbox" name="unique" value="인디">인디</label>
+        <label for="주작" style="cursor:pointer"><input id="주작" type="checkbox" name="unique" value="주작">주작</label>
+        <label for="503" style="cursor:pointer"><input id="503" type="checkbox" name="unique" value="503">503</label>
+        <label for="333" style="cursor:pointer"><input id="333" type="checkbox" name="unique" value="333">333</label>
+        <label for="악운" style="cursor:pointer"><input id="악운" type="checkbox" name="unique" value="악운">악운</label>
+        <label for="이취" style="cursor:pointer"><input id="이취" type="checkbox" name="unique" value="이취" checked>이취</label>
+        <label for="쩜드라" style="cursor:pointer"><input id="쩜드라" type="checkbox" name="unique" value="쩜드라" checked>쩜드라</label>
+        <label for="5복족" style="cursor:pointer"><input id="5복족" type="checkbox" name="unique" value="5복족" checked>5복족</label>
+        <label for="다스" style="cursor:pointer"><input id="다스" type="checkbox" name="unique" value="다스" checked>다스</label></td>
+      </tr>
+      <tr>
+        <td>에픽타워 미션</td>
+        <td><label for="헬게이트" style="cursor:pointer"><input id="헬게이트" type="checkbox" name="epic" value="헬게이트" checked>헬게이트</label>
+        <label for="미치광이" style="cursor:pointer"><input id="미치광이" type="checkbox" name="epic" value="미치광이" checked>미치광이</label>
+        <label for="천사" style="cursor:pointer"><input id="천사" type="checkbox" name="epic" value="천사" checked>천사</label></td>
+      </tr>
+    </table>
+    </form>
+    <label for="반전" style="cursor:pointer"><input id="반전" type="checkbox" name="epic" value="반전">반전</label><br><br>
+    <table class="tower">
+      <tr>
+        <td class="노말_드라군"><img src="https://i.imgur.com/7qtpgpn.png"></td>
+        <td class="노말_벌쳐"><img src="https://i.imgur.com/r4IWJHW.png"></td>
+        <td class="노말_뮤탈"><img src="https://i.imgur.com/8DIDwmO.png"></td>
+        <td class="노말_레이스"><img src="https://i.imgur.com/rC31yoI.png"></td>
+        <td class="노말_스카웃"><img src="https://i.imgur.com/Koj03wo.png"></td>
+        <td class="노말_울트라"><img src="https://i.imgur.com/lDdCVNN.png"></td>
+        <td class="노말_마린"><img src="https://i.imgur.com/RJAFjUG.png"></td>
+        <td class="노말_히드라"><img src="https://i.imgur.com/nTWUJBK.png"></td>
+      </tr>
+      <tr>
+        <td class="매직_닼칸"><img src="https://i.imgur.com/JHTvlOb.png"></td>
+        <td class="매직_탱크"><img src="https://i.imgur.com/MDXKLSu.png"></td>
+        <td class="매직_디파"><img src="https://i.imgur.com/SyoZ9z1.png"></td>
+        <td class="매직_스카웃"><img src="https://i.imgur.com/laJZZbR.png"></td>
+        <td class="매직_닼템"><img src="https://i.imgur.com/zDedk6E.png"></td>
+        <td class="매직_여고"><img src="https://i.imgur.com/fJfaOoK.png"></td>
+        <td class="매직_파벳"><img src="https://i.imgur.com/4DgSAYg.png"></td>
+        <td class="매직_고스트"><img src="https://i.imgur.com/kO7LYQt.png"></td>
+      </tr>
+      <tr>
+        <td class="레어_드라군"><img src="https://i.imgur.com/X6lvPkW.png"></td>
+        <td class="레어_파벳"><img src="https://i.imgur.com/8s6M5bo.png"></td>
+        <td class="레어_디바"><img src="https://i.imgur.com/6VeSNUV.png"></td>
+        <td class="레어_아비터"><img src="https://i.imgur.com/mlwGKVk.png"></td>
+        <td class="레어_고스트"><img src="https://i.imgur.com/g4qkgll.png"></td>
+        <td class="레어_레이스"><img src="https://i.imgur.com/wsrILq4.png"></td>
+        <td class="레어_골리앗"><img src="https://i.imgur.com/zcByeXz.png"</td>
+        <td class="레어_디파"><img src="https://i.imgur.com/jpcy08H.png"></td>
+      </tr>
+      <tr>
+        <td class="유니크_리버"><img src="https://i.imgur.com/uyWapeq.png"></td>
+        <td class="유니크_발키리"><img src="https://i.imgur.com/nHGklw8.png"></td>
+        <td class="유니크_가디언"><img src="https://i.imgur.com/HjdoyIg.png"></td>
+        <td class="유니크_닼칸"><img src="https://i.imgur.com/n4eLfMh.png"></td>
+        <td class="유니크_하템"><img src="https://i.imgur.com/d9QwBJR.png"></td>
+        <td class="유니크_히드라"><img src="https://i.imgur.com/T3XaleB.png"></td>
+        <td class="유니크_저글링"><img src="https://i.imgur.com/4GXrERH.png"></td>
+        <td class="유니크_마린"><img src="https://i.imgur.com/AwrJun2.png"></td>
+      </tr>
+      <tr>
+        <td class="에픽_거인"><img src="https://i.imgur.com/vvHuRXI.png"></td>
+        <td class="에픽_야마토"><img src="https://i.imgur.com/4hy2sLT.png"></td>
+        <td class="에픽_수리검"><img src="https://i.imgur.com/6SPNu3D.png"></td>
+        <td class="에픽_래피드"><img src="https://i.imgur.com/WAKsU7r.png"></td>
+        <td class="에픽_핵"><img src="https://i.imgur.com/98GR6aQ.png"></td>
+        <td class="에픽_여왕"><img src="https://i.imgur.com/1sCBWrO.png"></td>
+        <td class="에픽_유령"><img src="https://i.imgur.com/A4l64f9.png"></td>
+        <td class="에픽_지옥불"><img src="https://i.imgur.com/QAySgvC.png"></td>
+      </tr>
+    </table>
+  </body>
+</html>
